@@ -1,0 +1,146 @@
+.navTopDiv {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  background: white;
+  box-shadow: 0px 0px 3px 0px #808080c2;
+  z-index: 1200;
+}
+.logoDiv {
+  display: flex;
+  line-height: initial;
+  align-items: center;
+}
+.navLinksUl {
+  display: flex;
+  gap: 16px;
+}
+.navLinksUl li {
+  padding: 0 8px;
+}
+.navBtnDiv {
+  display: flex;
+  align-items: center;
+}
+.navBtnDiv button {
+  margin-right: 12px;
+}
+.navBtnDiv button:hover {
+  background: #fcf6f6;
+}
+.navBtn1,
+.navBtn2 {
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 5px 12px;
+  background: none;
+}
+.navCoinDiv {
+  position: relative;
+  cursor: pointer;
+  padding: 10px 0;
+}
+.navCoinShadowDiv {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 240px;
+  background: white;
+  box-shadow: 0 0 2px 0 rgb(182, 175, 175);
+  z-index: 999;
+  display: none;
+}
+.showShadow:hover .navCoinShadowDiv {
+  display: block;
+}
+.navCoinShadowDiv::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 85%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+.navCoinImg {
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: text-top;
+}
+.navBtn3 {
+  border: none;
+  background: none;
+}
+.navBtn4 {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 50%;
+  background: linen;
+}
+.openNavLinksDiv,
+.navBtn5,
+.openNavBtnDiv {
+  display: none;
+}
+/* ................gameInfo........................ */
+
+.gameFlexDiv {
+  display: flex;
+  gap: 8px;
+}
+
+/* ................notification.......................... */
+
+.notification_msg {
+  font-size: 14px;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 18px;
+  margin-bottom: 8px;
+}
+.notification_msg:hover {
+  display: block;
+}
+
+/* ....................userHome............................. */
+
+.rightMargin {
+  margin-right: 12px;
+}
+.hoverP:hover {
+  background-color: linen;
+}
+
+/* ......................offcanvas........................ */
+
+.offcanvas {
+  z-index: 1500;
+}
+
+@media screen and (max-width: 1000px) {
+  .navBtnDiv {
+    display: none;
+  }
+  .navBtn5 {
+    display: block;
+  }
+  .openNavBtnDiv {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 700px) {
+  .navLinksDiv {
+    display: none;
+  }
+  .openNavLinksDiv {
+    display: flex;
+    flex-direction: column;
+  }
+}

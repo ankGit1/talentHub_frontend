@@ -1,0 +1,11 @@
+.notesDiv {
+  text-align: center;
+}
+.nonotesImg {
+  width: auto;
+}
+@media screen and (max-width: 500px) {
+  .nonotesImg {
+    width: 100%;
+  }
+}

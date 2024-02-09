@@ -1,0 +1,10 @@
+.pdf-download-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: #f3eded;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

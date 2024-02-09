@@ -1,0 +1,27 @@
+.refer_topDiv {
+  display: flex;
+  justify-content: center;
+  background: rgb(246, 243, 236);
+}
+.referSize {
+  width: 80%;
+}
+.refer_btnDiv {
+  text-align: center;
+}
+.refer_infoDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  .referSize {
+    width: 100%;
+  }
+  .refer_infoDiv {
+    flex-direction: column;
+  }
+}

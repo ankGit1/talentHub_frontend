@@ -1,0 +1,51 @@
+.dashboardTopDiv {
+  background: rgb(246, 243, 236);
+}
+.myCourse_CalenderDiv,
+.dashboard_upcoming {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.dashReferDiv {
+  display: flex;
+  height: 360px;
+  align-items: center;
+  background-color: rgb(255 247 235);
+  padding: 16px 0;
+}
+.dashboard_referImg {
+  flex: 1;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard_referText {
+  flex: 1;
+  display: block;
+  padding: 0 32px 0 60px;
+}
+.dashboard_referText span {
+  margin-right: 16px;
+}
+.dashRefer_button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #2b5960fa;
+  color: white;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .dashboard_referText {
+    padding: 10px;
+  }
+  .dashRefer_button {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .dashboard_referText {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+.bookClass_headingDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bookClass_imgDiv {
+  flex: 1;
+  text-align: center;
+}
+.bookClass_formDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bookClass_imgDiv img {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.bookClass_formContainer {
+  width: 80%;
+  box-shadow: 0 0 5px 0 gray;
+}
+.bookClass_regTitle {
+  text-align: center;
+  color: red;
+}
+.bookClass_formDiv input {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .bookClass_headingDiv {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,39 @@
+html,
+body {
+  margin: 0;
+  font-family: "Public Sans", sans-serif;
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+body::-webkit-scrollbar {
+  width: 1px;
+}
+body::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+body::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}

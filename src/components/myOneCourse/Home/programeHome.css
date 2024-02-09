@@ -1,0 +1,25 @@
+.programmeHome_topDiv {
+  background: rgb(246, 243, 236);
+}
+.programmeHome_flexDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.ProgrammeHome_flexLeft {
+  width: 25%;
+}
+.ProgrammeHome_flexRight {
+  width: 73%;
+  background: white;
+}
+@media screen and (max-width: 850px) {
+  .ProgrammeHome_flexLeft {
+    width: 100%;
+  }
+  .ProgrammeHome_flexRight {
+    width: 100%;
+    background: white;
+  }
+}

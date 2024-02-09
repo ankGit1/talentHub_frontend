@@ -1,0 +1,30 @@
+.topbarTop {
+  background-color: #121b37;
+}
+.topBarCourse_type {
+  background: linen;
+  font-weight: 600;
+}
+.topbar_contain {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  justify-content: space-between;
+  color: white;
+}
+.topbar_courseDetails {
+  margin-right: 2vw;
+}
+.topBar_progressDiv {
+  text-align: center;
+  width: 40%;
+}
+
+@media screen and (max-width: 700px) {
+  .topbar_contain {
+    flex-wrap: wrap;
+  }
+  .topBar_progressDiv {
+    width: 100%;
+  }
+}

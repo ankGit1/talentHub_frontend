@@ -1,0 +1,39 @@
+.purchase_topDiv {
+  background: rgb(246, 243, 236);
+}
+.purchase_titleDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: linen;
+}
+.purchase_titleDiv h2 {
+  color: #ff735c;
+}
+.purchase_titleDiv img {
+  width: 360px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* .......................myorder............. */
+
+.order_title {
+  text-align: center;
+}
+.order_infoDiv {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.order_infoDiv div {
+  width: 260px;
+  margin-bottom: 2vw;
+}
+
+@media screen and (max-width: 700px) {
+  .purchase_titleDiv {
+    flex-direction: column;
+  }
+}

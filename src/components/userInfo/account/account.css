@@ -1,0 +1,106 @@
+.account_topDiv {
+  background: rgb(246, 243, 236);
+}
+.account_imgDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: linen;
+}
+.account_imageDivEdit {
+  align-self: baseline;
+}
+.accountImgContainer {
+  flex: 1;
+  text-align: center;
+}
+.accountImgContainer img {
+  width: 180px;
+  height: 180px;
+  border: 2px solid white;
+  object-fit: cover;
+  padding: 10px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(45deg, black, #978080 100px);
+}
+.account_imgInfo {
+  flex: 3;
+}
+.proTag {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.smallMargin {
+  margin-bottom: 10px;
+}
+.account_imgDiv input {
+  display: none;
+}
+.account_imgDiv label {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 3px 10px;
+  background: repeating-linear-gradient(45deg, black, #978080 100px);
+  cursor: pointer;
+}
+
+/* .................userForm................ */
+
+.form_container {
+  background: white;
+}
+.flex_inputDiv {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+.flex_inputDiv div {
+  width: 40%;
+}
+.flex_inputDiv div input {
+  width: 80%;
+  height: 32px;
+  padding: 0 16px;
+  border: none;
+  background: rgb(246, 243, 236);
+}
+.flex_inputDiv div p {
+  margin-bottom: 10px;
+}
+.about_inputDiv {
+  width: 100%;
+}
+.about_inputDiv textarea {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: rgb(246, 243, 236);
+}
+.edit_userForm {
+  margin: 20px 0;
+  text-align: end;
+}
+.edit_userForm button,
+.account_imageDivEdit {
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: repeating-linear-gradient(45deg, black, #978080 100px);
+}
+
+@media screen and (max-width: 700px) {
+  .account_imgDiv {
+    flex-direction: column;
+  }
+  .account_imageDivEdit {
+    align-self: end;
+  }
+  .flex_inputDiv div {
+    width: 50%;
+  }
+}

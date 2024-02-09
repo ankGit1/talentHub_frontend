@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap");
+
+.vsmall-p {
+  font-size: 10px;
+}
+.small-p {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.smallw-p {
+  font-size: 13px;
+  color: white;
+}
+.b_border {
+  border-bottom: 1px solid rgb(232, 232, 234);
+}
+svg {
+  vertical-align: sub !important;
+}

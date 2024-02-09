@@ -1,0 +1,124 @@
+.registrationHome_topDiv {
+  display: flex;
+  height: 100vh;
+  perspective: 1000px;
+}
+
+.main-container {
+  width: 80%;
+}
+
+.registrationHome_formDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.logoImg {
+  height: 45px;
+  width: 30px;
+  margin-right: 6px;
+}
+
+.registrationHome_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: self-start;
+  cursor: pointer;
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.registrationHome_topDiv.flipped .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.registrationHome_nav div {
+  display: flex;
+}
+
+.registrationHome_welcomeDiv,
+.registrationHome_slidingImages {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.registrationHome_slidingImages {
+  color: white;
+  background: #3a1a41;
+}
+.slidingImg {
+  width: 50px;
+  height: 50px;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #aaaaaa;
+  transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.forgotPass {
+  text-decoration: underline;
+}
+.registrationHome_button {
+  height: 52px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  background-color: #b43053;
+  color: #ffffff;
+  font-size: 16px;
+  width: 100%;
+}
+.registrationHome_formDiv::-webkit-scrollbar {
+  width: 1px;
+}
+.registrationHome_formDiv::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+.registrationHome_formDiv::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+
+.registrationHome_imageDiv {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background: #282031;
+}
+
+@media screen and (max-width: 650px) {
+  .registrationHome_imageDiv {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+.gameContent_mainDiv {
+  background-color: rgb(246, 243, 236);
+}
+.gameContent_imgDiv img {
+  width: 100%;
+}
+.gameContent_infoDiv {
+  padding: 20px;
+  background-color: white;
+}

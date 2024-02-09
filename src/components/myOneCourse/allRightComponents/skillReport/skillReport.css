@@ -1,0 +1,65 @@
+.chartWrapper {
+  display: flex;
+  justify-content: center;
+}
+.skillReport_chartDiv {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+}
+canvas {
+  width: 600px;
+  height: 400px;
+}
+
+@media screen and (max-width: 670px) and (min-width: 450px) {
+  .skillReport_chartDiv {
+    width: 400px;
+  }
+  canvas {
+    width: 400px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .skillReport_chartDiv {
+    width: 260px;
+  }
+  .canvas {
+    width: 260px;
+    height: auto;
+  }
+}
+
+/* ...................skillTabs.......................... */
+
+.skillTabs_tab-header {
+  display: flex;
+}
+
+.skillTabs_tab-header button {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.skillTabs_tab-header button.active {
+  border-bottom: 2px solid;
+}
+
+.skillTabs_tab-content {
+  margin-top: 10px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type: rgb(246, 243, 236);
+}
+
+/* .........................NoData................. */
+
+.nodata {
+  text-align: center;
+}

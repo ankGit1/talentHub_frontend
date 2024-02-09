@@ -1,0 +1,55 @@
+.help_topDiv {
+  background: rgb(246, 243, 236);
+}
+.help_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: linen;
+}
+.help_title_name {
+  color: #ff735c;
+}
+.help_title img {
+  width: 360px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* .......................contact...................... */
+
+.contact_topDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: white;
+}
+.contact_topDiv form {
+  flex: 3;
+  border-right: 1px solid rgba(216, 213, 213, 0.73);
+  border-bottom: none;
+}
+.contact_rside {
+  flex: 1;
+  text-align: center;
+}
+.contact_rside div {
+  margin: 48px 0;
+}
+.contact_rside p {
+  margin: 16px 0;
+}
+
+@media screen and (max-width: 700px) {
+  .help_title {
+    flex-direction: column;
+  }
+  .contact_topDiv {
+    flex-direction: column;
+  }
+  .contact_topDiv form {
+    border-bottom: 1px solid rgba(216, 213, 213, 0.73);
+    border-right: none;
+  }
+}

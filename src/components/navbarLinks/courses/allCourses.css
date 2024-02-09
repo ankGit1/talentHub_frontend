@@ -1,0 +1,14 @@
+.allCourses_topDiv {
+  min-height: 100vh;
+  background: rgb(246, 243, 236);
+}
+.allCoureContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.noCourseMsg {
+  font-size: large;
+}

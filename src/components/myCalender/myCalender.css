@@ -1,0 +1,62 @@
+.myCalenderTopDiv {
+  flex: 1;
+}
+.myCalender_contain {
+  background: white;
+  padding: 2vw 3vw;
+  min-width: 400px;
+}
+.MyCalender_eventTitle {
+  display: flex;
+  justify-content: space-between;
+}
+.myCalender_events {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+.myCalender_date {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.myCalender_text {
+  line-height: 18px;
+}
+.card .list-group {
+  text-align: center;
+}
+.joinBtn {
+  border: 1px solid;
+  border-radius: 5px;
+  background: none;
+  padding: 5px 10px;
+}
+.joinBtn:hover {
+  background: #fcf6f6;
+}
+.sesSkeleton_month {
+  color: white;
+  background: #2b5960fa;
+  border: none;
+}
+.sesSkeleton_date {
+  border: none;
+  background: rgb(245, 245, 245);
+}
+.lineDot {
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media screen and (max-width: 743px) {
+  .myCalenderTopDiv {
+    padding: 16px 0;
+  }
+}
+@media screen and (max-width: 440px) {
+  .myCalender_contain {
+    min-width: 280px;
+  }
+}

@@ -1,0 +1,8 @@
+.circularBar_topDiv {
+  display: flex;
+  justify-content: center;
+  max-height: 200px;
+}
+.circularBar {
+  width: 50%;
+}
