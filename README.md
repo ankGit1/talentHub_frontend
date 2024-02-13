@@ -1,4 +1,4 @@
-# talent**hub**
+# talenthub
 
 Welcome to talenthub, your go-to platform for online learning! With talenthub, you can explore a vast library of courses, track your progress, schedule upcoming sessions, monitor your skills, and download valuable resources to aid your learning journey. Whether you're a beginner or an expert, talenthub has something for everyone.
 
@@ -29,4 +29,4 @@ To get started with talenthub, follow these simple steps:
 
 - Install dependencies: npm install
 - Run the application: npm run dev
-- Open your browser and navigate to http://localhost:3000 to start using talenthub.
+- Open your browser and navigate to http://localhost:<localhost> to start using talenthub.
