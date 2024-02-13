@@ -29,4 +29,4 @@ To get started with talenthub, follow these simple steps:
 
 - Install dependencies: npm install
 - Run the application: npm run dev
-- Open your browser and navigate to http://localhost:<localhost> to start using talenthub.
+- Open your browser and navigate to localhost to start using talenthub.
