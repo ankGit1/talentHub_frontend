@@ -76,7 +76,7 @@ const Tabs = () => {
 
   return (
     <div>
-      {loading && <h3>loading...</h3>}
+      {loading && <h5 className="m-3">loading...</h5>}
       <div className="tab-buttons">
         <Swiper
           navigation={true}
