@@ -82,7 +82,7 @@ function Login() {
         </button>
       </form>
       <div className="vsmall-p text-center py-2">
-        © 2023 talenthut. All Rights Reserved.
+        © 2024 talenthub. All Rights Reserved.
       </div>
     </div>
   );
