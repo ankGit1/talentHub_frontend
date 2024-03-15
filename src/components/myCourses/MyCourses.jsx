@@ -38,7 +38,8 @@ function MyCourses() {
         My Couses
       </p>
       <div className="myCourses_courses">
-        {uCourses?.length > 0 ? (
+        {!err &&
+          uCourses?.length > 0 &&
           uCourses.map(
             (course, i) =>
               i < 2 && (
@@ -49,8 +50,8 @@ function MyCourses() {
                   <CourseCard info={course} btn="Resume Learning" />
                 </Link>
               )
-          )
-        ) : (
+          )}
+        {!err && uCourses?.length === 0 && (
           <div className="my-3 text-light-emphasis">
             <h3>No Course Found</h3>
             <p>
@@ -59,7 +60,7 @@ function MyCourses() {
             </p>
           </div>
         )}
-        {err && <h5 className="text-body-secondary">{err}</h5>}
+        {err && <p className="red">{err}</p>}
       </div>
     </div>
   );

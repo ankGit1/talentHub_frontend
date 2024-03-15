@@ -28,12 +28,15 @@ function AllCourses() {
     if (locid) fetchCourses();
   }, []);
 
+  console.log(uCourses);
+
   return (
     <div className="p-4 allCourses_topDiv">
       <h2>Courses</h2>
       <p>You can find all your courses here!</p>
       <div className="allCoureContainer">
-        {uCourses?.length > 0 ? (
+        {!err &&
+          uCourses?.length > 0 &&
           uCourses.map((course) => (
             <Link
               key={course.cId}
@@ -41,13 +44,14 @@ function AllCourses() {
             >
               <CourseCard info={course} btn="Resume Learning" />
             </Link>
-          ))
-        ) : (
+          ))}
+        {!err && uCourses?.length === 0 && (
           <p className="my-3 text-light-emphasis noCourseMsg">
             You haven't added any courses yet. Explore the library for new
             courses and add them to your list.
           </p>
         )}
+        {err && <p className="red">{err}</p>}
       </div>
     </div>
   );

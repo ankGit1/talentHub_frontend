@@ -81,7 +81,7 @@ function GameInfo() {
           </Link>
         </div>
       )}
-      {err && <p className="red small-p">{err}</p>}
+      {/* {err && <p className="red small-p">{err}</p>} */}
     </div>
   );
 }

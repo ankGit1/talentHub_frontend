@@ -36,14 +36,15 @@ const Calender = () => {
   return (
     <>
       <div className="p-4 calenderDiv">
-        {eventDate.length > 0 && !err ? (
+        {!err && eventDate.length > 0 && (
           <FullCalendar
             plugins={[dayGridPlugin]}
             initialView="dayGridMonth"
             events={eventDate}
             height={"100vh"}
           />
-        ) : (
+        )}
+        {!err && eventDate.length === 0 && (
           <h5 className="my-3 text-light-emphasis">
             Currently you don't have any Events. Add new courses from Library,
             and your events will showcase here.

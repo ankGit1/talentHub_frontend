@@ -12,6 +12,7 @@ function Login() {
     password: "",
   });
   const [err, setErr] = useState("");
+  const [disBtn, setDisBtn] = useState(false);
   const navigate = useNavigate();
 
   const fieldChange = (data) => {
@@ -22,15 +23,18 @@ function Login() {
 
   const submitForm = async (e) => {
     e.preventDefault();
+    setDisBtn(true);
     await axios
       .post(`${import.meta.env.VITE_backend}/path/user/login`, form)
       .then((res) => {
         localStorage.setItem("user", JSON.stringify(res.data.info));
         localStorage.setItem("token", JSON.stringify(res.data.token));
+        setDisBtn(false);
         setErr("");
         navigate("/learner");
       })
       .catch((err) => {
+        setDisBtn(false);
         setErr(err.response.data);
       });
   };
@@ -57,30 +61,45 @@ function Login() {
           </p>
         </div>
       </div>
-      <form className="my-3 py-3" onSubmit={submitForm}>
-        <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
-          <Form.Control
-            type="email"
-            placeholder="email"
-            value={form.email}
-            onChange={(e) => fieldChange({ email: e.target.value })}
-          />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingPassword1" label="Password">
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={(e) => fieldChange({ password: e.target.value })}
-          />
-        </FloatingLabel>
+      <div className="form_container">
+        <form className="my-3 py-3" onSubmit={submitForm}>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Email"
+            className="mb-3"
+          >
+            <Form.Control
+              type="email"
+              placeholder="email"
+              value={form.email}
+              onChange={(e) => fieldChange({ email: e.target.value })}
+            />
+          </FloatingLabel>
+          <FloatingLabel controlId="floatingPassword1" label="Password">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={(e) => fieldChange({ password: e.target.value })}
+            />
+          </FloatingLabel>
 
-        {err && <p className="red">{err}</p>}
+          {err && <p className="red">{err}</p>}
 
-        <button type="submit" className="registrationHome_button mt-3">
-          Login
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="registrationHome_button mt-3"
+            disabled={disBtn}
+          >
+            {disBtn && (
+              <div className="spinner-grow mx-2" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            )}
+            Login
+          </button>
+        </form>
+      </div>
       <div className="vsmall-p text-center py-2">
         © 2024 talenthub. All Rights Reserved.
       </div>

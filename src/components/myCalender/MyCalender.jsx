@@ -24,7 +24,7 @@ function MyCalender() {
           setCal(res.data);
         })
         .catch((err) => {
-          setErr("getting difficulty while fetching data");
+          setErr("We are getting difficulty while fetching data ...");
         });
     };
     if (courseId) fetchCalender();
@@ -68,13 +68,14 @@ function MyCalender() {
               </Link>
             )}
           </div>
-          {!err && courseId ? (
+          {!err && courseId && (
             <div>
               {cal.map((c) => (
                 <SessionSkeleton key={c._id} info={c} />
               ))}
             </div>
-          ) : (
+          )}
+          {!err && !courseId && (
             <p className="my-3 text-light-emphasis">
               You don't have any upcoming events. Add new courses from Library,
               and your events will showcase here.

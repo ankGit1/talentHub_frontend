@@ -130,9 +130,15 @@ function SignUp() {
           className="registrationHome_button"
           disabled={disBtn}
         >
+          {disBtn && (
+            <div className="spinner-grow mx-2" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          )}
           Sign up
         </button>
       </form>
+
       <div className="vsmall-p text-center py-2">
         © 2023 talenthut. All Rights Reserved.
       </div>
