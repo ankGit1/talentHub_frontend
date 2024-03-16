@@ -16,17 +16,3 @@ Welcome to talenthub, your go-to platform for online learning! With talenthub, y
 - All components are organized neatly in the src/components folder for easy navigation and
   maintenance.
 - Images used in the application can be found inside the public/images folder.
-
-# Installation
-
-To get started with talenthub, follow these simple steps:
-
-- Clone the repository
-- Navigate to the project directory: cd frontend
-- Create a .env file in the root of the project directory (frontend) and add the following  
-  content to it (only if you want to run app on localhost) :
-  VITE_backend = http://localhost:5000 (you have to do similar step in backend)
-
-- Install dependencies: npm install
-- Run the application: npm run dev
-- Open your browser and navigate to localhost to start using talenthub.
