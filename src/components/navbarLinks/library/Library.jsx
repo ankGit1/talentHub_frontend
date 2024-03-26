@@ -10,8 +10,8 @@ function Library() {
   useEffect(() => {
     let lKey = localStorage.getItem("key");
     let lCourse = localStorage.getItem("addCourse");
-    if (lKey) localStorage.removeItem(lKey);
-    if (lCourse) localStorage.removeItem(lCourse);
+    if (lKey) localStorage.removeItem("key");
+    if (lCourse) localStorage.removeItem("addCourse");
 
     const fetchCourses = async () => {
       await axios
