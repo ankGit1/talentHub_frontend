@@ -28,8 +28,6 @@ function AllCourses() {
     if (locid) fetchCourses();
   }, []);
 
-  console.log(uCourses);
-
   return (
     <div className="p-4 allCourses_topDiv">
       <h2>Courses</h2>

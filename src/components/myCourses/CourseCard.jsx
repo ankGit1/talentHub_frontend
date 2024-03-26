@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { Card, Modal } from "react-bootstrap";
 import { MdAccessTime } from "react-icons/md";
 import axios from "axios";
+import { loadStripe } from "@stripe/stripe-js";
 
 function CourseCard({ info, btn }) {
   const { cId, cName, cType, cTime, cImage } = info;
@@ -12,7 +13,11 @@ function CourseCard({ info, btn }) {
 
   const updateLocaleStorage = async () => {
     await axios
-      .get(`${import.meta.env.VITE_backend}/path/user/get/localstorage/courses/${userId}`)
+      .get(
+        `${
+          import.meta.env.VITE_backend
+        }/path/user/get/localstorage/courses/${userId}`
+      )
       .then((res) => {
         const localData = JSON.parse(localStorage.getItem("user"));
         localData.courseArr = res.data;
@@ -23,30 +28,69 @@ function CourseCard({ info, btn }) {
       });
   };
 
-  const cardBtnClicked = async (e, id) => {
-    if (e.target.innerText === "Add Course" && userId) {
-      await axios
-        .post(`${import.meta.env.VITE_backend}/path/course/push/user/course/`, {
-          courseId: id,
-          user: userId,
-        })
-        .then((res) => {
-          setErr(false);
-          setShow(true);
-          setTimeout(() => {
-            setShow(false);
-          }, 4000);
-          updateLocaleStorage();
-        })
-        .catch((err) => {
+  const addCourse = async (id) => {
+    await axios
+      .post(`${import.meta.env.VITE_backend}/path/course/push/user/course/`, {
+        courseId: id,
+        user: userId,
+      })
+      .then((res) => {
+        setErr(false);
+        setShow(true);
+        setTimeout(() => {
           setShow(false);
-          setErr(true);
-          setTimeout(() => {
-            setErr(false);
-          }, 4000);
+        }, 4000);
+        updateLocaleStorage();
+      })
+      .catch((err) => {
+        setShow(false);
+        setErr(true);
+        setTimeout(() => {
+          setErr(false);
+        }, 4000);
+      });
+  };
+
+  const cardBtnClicked = async (e, id) => {
+    const localData = JSON.parse(localStorage.getItem("user"));
+    let checkCourseId = localData.courseArr.filter((c) => c.cId === id);
+
+    if (e.target.innerText === "Add Course" && userId) {
+      addCourse(id);
+    }
+
+    if (e.target.innerText === "Purchase" && userId && !checkCourseId.length) {
+      const stripe = await loadStripe(import.meta.env.VITE_stripePublicKey);
+      try {
+        const response = await axios.post(
+          `${import.meta.env.VITE_backend}/path/course/payment/checkout`,
+          {
+            courseName: cName || info.name,
+            price: 100,
+          }
+        );
+
+        localStorage.setItem("key", response.data.id);
+        localStorage.setItem(
+          "addCourse",
+          JSON.stringify({ courseId: id, user: userId })
+        );
+
+        // Ensure the Promise is properly resolving
+        const result = await stripe.redirectToCheckout({
+          sessionId: response.data.id,
         });
+
+        // Check for errors in the result
+        if (result.error) {
+          console.error("Stripe error:", result.error.message);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+
   return (
     <>
       <Card className="p-2">

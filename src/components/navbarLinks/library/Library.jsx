@@ -8,6 +8,11 @@ function Library() {
   const [err, setErr] = useState("");
 
   useEffect(() => {
+    let lKey = localStorage.getItem("key");
+    let lCourse = localStorage.getItem("addCourse");
+    if (lKey) localStorage.removeItem(lKey);
+    if (lCourse) localStorage.removeItem(lCourse);
+
     const fetchCourses = async () => {
       await axios
         .get(`${import.meta.env.VITE_backend}/path/course/get/library/courses`)
@@ -29,7 +34,11 @@ function Library() {
       <div className="allCoureContainer">
         {courses.length > 0 &&
           courses.map((course) => (
-            <CourseCard key={course._id} info={course} btn="Add Course" />
+            <CourseCard
+              key={course._id}
+              info={course}
+              btn={course.type === "Subscription" ? "Purchase" : "Add Course"}
+            />
           ))}
       </div>
       {err && <p className="red">{err}</p>}

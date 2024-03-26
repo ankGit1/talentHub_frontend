@@ -29,6 +29,8 @@ import Library from "./components/navbarLinks/library/Library";
 import GameContent from "./components/gamifiedZone/gameContent/GameContent";
 import BookClass from "./components/upcomingEvents/subs/BookClass";
 import WrongPath from "./components/wrongPath/WrongPath";
+import Success from "./components/paymentStatus/Success";
+import Cancel from "./components/paymentStatus/Cancel";
 
 const ProtectedRoute = ({ children }) => {
   const findToken = localStorage.getItem("token");
@@ -68,6 +70,8 @@ const router = createBrowserRouter(
         <Route path="refer" element={<Refer />} />
         <Route path="gamified" element={<GameContent />} />
         <Route path="bookclass" element={<BookClass />} />
+        <Route path="success" element={<Success />} />
+        <Route path="cancel" element={<Cancel />} />
       </Route>
       <Route path="*" element={<WrongPath />} />
     </Route>

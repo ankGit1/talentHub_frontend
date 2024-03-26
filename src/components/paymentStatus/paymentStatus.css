@@ -1,0 +1,17 @@
+.paymentStaus_topDiv {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.paymentStaus_topDiv img {
+  height: 300px;
+}
+
+@media screen and (max-width: 650px) {
+  .paymentStaus_topDiv img {
+    height: 200px;
+  }
+}
