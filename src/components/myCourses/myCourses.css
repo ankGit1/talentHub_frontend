@@ -35,6 +35,11 @@
 .resumeLearnBtn:hover {
   background: #274a4ffa;
 }
+.time_per {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 @media screen and (max-width: 570px) {
   .myCousesTopDiv {

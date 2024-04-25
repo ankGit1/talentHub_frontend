@@ -5,13 +5,22 @@ import { MdHistory } from "react-icons/md";
 import { MdSupportAgent } from "react-icons/md";
 import { RiUserShared2Fill } from "react-icons/ri";
 import { MdOutlineLogout } from "react-icons/md";
+import axios from "axios";
 
 function UserHome() {
   const fetchName = JSON.parse(localStorage.getItem("user"))?.name;
   const initials = fetchName?.charAt(0).toUpperCase();
   const logoutUser = () => {
+    const gLogout = async () => {
+      try {
+        await axios.post(`${import.meta.env.VITE_backend}/logout`);
+      } catch (error) {
+        console.log("something went wrong");
+      }
+    };
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    gLogout();
   };
   return (
     <div className="navCoinDiv showShadow">

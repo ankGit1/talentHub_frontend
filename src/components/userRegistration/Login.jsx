@@ -5,6 +5,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { Form } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import GoogleLogin from "./GoogleLogin";
 
 function Login() {
   const [form, setForm] = useState({
@@ -100,7 +101,10 @@ function Login() {
           </button>
         </form>
       </div>
-      <div className="vsmall-p text-center py-2">
+      <div className="my-2 googleLoginTopDiv">
+        <GoogleLogin />
+      </div>
+      <div className="vsmall-p text-center py-5">
         © 2024 talenthub. All Rights Reserved.
       </div>
     </div>

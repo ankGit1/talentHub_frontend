@@ -3,6 +3,6 @@
   justify-content: center;
   max-height: 200px;
 }
-.circularBar {
+.circularBar_topDiv .circularBar {
   width: 50%;
 }

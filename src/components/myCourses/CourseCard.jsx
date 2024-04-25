@@ -2,11 +2,12 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Card, Modal } from "react-bootstrap";
 import { MdAccessTime } from "react-icons/md";
+import CardProgress from "../ProgressBar/CardProgress";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 
 function CourseCard({ info, btn }) {
-  const { cId, cName, cType, cTime, cImage } = info;
+  const { cId, cName, cType, cTime, cImage, cCompletion } = info;
   const [show, setShow] = useState(false);
   const [err, setErr] = useState(false);
   const userId = JSON.parse(localStorage.getItem("user"))?.id;
@@ -76,12 +77,10 @@ function CourseCard({ info, btn }) {
           JSON.stringify({ courseId: id, user: userId })
         );
 
-        // Ensure the Promise is properly resolving
         const result = await stripe.redirectToCheckout({
           sessionId: response.data.id,
         });
 
-        // Check for errors in the result
         if (result.error) {
           console.error("Stripe error:", result.error.message);
         }
@@ -101,8 +100,15 @@ function CourseCard({ info, btn }) {
         />
         <Card.Body className="py-3 px-1">
           <span className="small-p courseType">{cType || info.type}</span>
-          <Card.Text className="my-3">{cName || info.name}</Card.Text>
-          <p className="pb-2 small-p">
+          <div className="my-3 time_per">
+            <div>{cName || info.name}</div>
+            <div>
+              {(cCompletion || info.cCompletion || info.cCompletion === 0) && (
+                <CardProgress per={cCompletion || info.cCompletion} />
+              )}
+            </div>
+          </div>
+          <p className=" small-p">
             <MdAccessTime size={18} />
             <span className="mx-1">{cTime || info.duration}</span>
           </p>

@@ -123,6 +123,32 @@
   overflow: hidden;
   background: #282031;
 }
+.googleLoginTopDiv {
+  display: flex;
+  justify-content: center;
+}
+.googleBtn {
+  width: 50%;
+  display: flex;
+  padding: 0;
+  border: 1px groove #4285f4;
+  background: none;
+}
+.googleImgDiv {
+  flex: 1;
+  padding: 8px 0;
+}
+.googleImgDiv img {
+  height: 24px;
+  width: 24px;
+}
+.googleTextDiv {
+  flex: 4;
+  background-color: #4285f4;
+  color: white;
+  height: 100%;
+  padding: 8px 0;
+}
 
 @media screen and (max-width: 650px) {
   .registrationHome_imageDiv {

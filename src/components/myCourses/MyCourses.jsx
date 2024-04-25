@@ -51,6 +51,7 @@ function MyCourses() {
                 </Link>
               )
           )}
+
         {!err && uCourses?.length === 0 && (
           <div className="my-3 text-light-emphasis">
             <h3>No Course Found</h3>

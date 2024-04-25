@@ -31,6 +31,7 @@ import BookClass from "./components/upcomingEvents/subs/BookClass";
 import WrongPath from "./components/wrongPath/WrongPath";
 import Success from "./components/paymentStatus/Success";
 import Cancel from "./components/paymentStatus/Cancel";
+import Redirect from "./components/googleAuthRedirect/Redirect";
 
 const ProtectedRoute = ({ children }) => {
   const findToken = localStorage.getItem("token");
@@ -44,6 +45,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
+      <Route path="/googleredirect/:token" element={<Redirect />} />
       <Route
         path="/learner"
         element={

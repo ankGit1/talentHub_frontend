@@ -110,12 +110,12 @@ function Account() {
         </div>
         <div className="account_imgInfo">
           <div className="proTag">
-            <h5 className="fw-bold m-0">John Doe</h5>
-            <span className="small-p ">( student )</span>
+            <h5 className="fw-bold m-0">{userInfo?.name}</h5>
+            <span className="small-p ">({userInfo?.category})</span>
           </div>
           <p className="smallMargin">
             <CiMail />
-            <span className="px-2"> johndoe22@ecom.com</span>
+            <span className="px-2">{userInfo?.email}</span>
           </p>
           <label htmlFor="resume" className="smallw-p">
             Upload Resume <MdOutlineFileUpload />
